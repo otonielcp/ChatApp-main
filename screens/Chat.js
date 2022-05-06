@@ -52,7 +52,8 @@ export default function Chat() {
     const q = query(collectionRef, orderBy("createdAt", "desc"));
 
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      console.log("querySnapshot unsusbscribe");
+      // console.log("querySnapshot unsusbscribe");
+      console.log("querySnapshot: ", querySnapshot);
       setMessages(
         querySnapshot.docs.map((doc) => ({
           _id: doc.data()._id,
